@@ -28,6 +28,7 @@ interface UserSettings {
   language: string;
   timezone: string;
   currency: string;
+  personalTransactionFeePercent: number; // New field
 }
 
 interface NotificationSettings {
@@ -62,7 +63,8 @@ export default function SettingsPage() {
     avatar: 'https://ui-avatars.com/api/?name=Max+Mustermann&background=3b82f6&color=fff',
     language: 'de',
     timezone: 'Europe/Berlin',
-    currency: 'EUR'
+    currency: 'EUR',
+    personalTransactionFeePercent: 0.5 // Default 0.5%
   });
 
   const [notificationSettings, setNotificationSettings] = useState<NotificationSettings>({

@@ -67,9 +67,17 @@ export interface User {
   supervisor_id?: string;
   transaction_fee_percent?: number;
   custom_commission_percent?: number;
+  personal_transaction_fee_percent?: number; // New field for personal transaction fee
   interest_rate?: number;
   payback_rate?: number;
-  tax_settings?: Record<string, any>;
+  tax_settings?: {
+    gross_income?: number;
+    marital_status?: 'single' | 'married';
+    church_tax?: boolean;
+    state?: string;
+    value_growth_percent?: number;
+    rent_increase_percent?: number;
+  };
 }
 
 export interface Company {
